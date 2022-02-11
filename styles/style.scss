@@ -1,6 +1,15 @@
 @font-face {
-    font-family: 'Mont';
-    src: url("/font/") format('opentype');
+    font-family: "Mont";
+    src: url("../font/Mont-Black.otf") format("otf"),
+        url("../font/Mont-BlackItalic.otf") format("otf"),
+        url("../font/Mont-Bold.otf") format("otf"),
+        url("../font/Mont-BoldItalic.otf") format("otf"),
+        url("../font/Mont-SemiBold.otf") format("otf"),
+        url("../font/Mont-Regular.otf") format("otf")
+        url("../font/Mont-Book.otf") format("otf"),
+        url("../font/Mont-BookItalic.otf") format("otf"),
+        url("../font/Mont-ExtraLight.otf") format("otf"),
+        url("../font/Mont-ExtraLightItalic.otf") format("otf");
 }
 
 html,
@@ -34,6 +43,7 @@ button{
     width: 15vh;
     border-radius: 1vh;
     outline: none;
+    font-weight: 500;
 }
 
 .glow-on-hover {
