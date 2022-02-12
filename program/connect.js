@@ -28,5 +28,5 @@ async function login() {
   //document.getElementById("btn-logout").onclick = logOut;
 
   function mydude() {
-    document.getElementById("btn-login").style.color = "green";
+    document.getElementById("btn-login").style.display = "none";
   }
