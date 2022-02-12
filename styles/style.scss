@@ -22,9 +22,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: rgb(255, 255, 255);
-    font-family: Mont;
-    font-size: 1vh;
+    background: rgb(0, 0, 0);
 }
 
 @keyframes gradient {
@@ -45,6 +43,8 @@ button{
     border-radius: 1vh;
     outline: none;
     font-weight: 500;
+    font-family: Mont;
+    font-size: 1vh;
 }
 
 .glow-on-hover {
