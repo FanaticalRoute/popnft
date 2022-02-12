@@ -28,5 +28,5 @@ async function login() {
   //document.getElementById("btn-logout").onclick = logOut;
 
   function mydude() {
-    console.log("Moralis init code");
+    document.getElementById("btn-login").style.color = "green";
   }
