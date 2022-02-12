@@ -25,4 +25,4 @@ async function login() {
   }*/
   
   document.getElementById("btn-login").onclick = login;
-  document.getElementById("btn-logout").onclick = logOut;
+  //document.getElementById("btn-logout").onclick = logOut; 
