@@ -27,6 +27,7 @@ async function login() {
   document.getElementById("btn-login").onclick = login;
   //document.getElementById("btn-logout").onclick = logOut;
 
-  function mydude() {
-    document.getElementById("btn-login").style.display = "none";
-  }
+/*Get NFTs*/
+
+const options = { q: "Pancake", chain: "bsc", filter: "name" };
+const NFTs = await Moralis.Web3API.token.searchNFTs(options);
