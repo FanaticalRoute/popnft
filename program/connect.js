@@ -1,3 +1,5 @@
+const Moralis = require('moralis');
+
 /* Moralis init code */
 const serverUrl = "https://k8imqlb5dzpd.usemoralis.com:2053/server";
 const appId = "Kf7O2boPKsgVF9Xiz7tWnhXNQCufgNyEBfnDkLeu";
@@ -26,3 +28,8 @@ async function login() {
   
   document.getElementById("btn-login").onclick = login;
   //document.getElementById("btn-logout").onclick = logOut;
+
+/*Get NFTs Metadata*/
+
+const options = { address: "0xd...07", chain: "bsc" };
+const metaData = await Moralis.Web3API.token.getNFTMetadata(options);
