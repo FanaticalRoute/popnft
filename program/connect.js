@@ -26,8 +26,3 @@ async function login() {
   
   document.getElementById("btn-login").onclick = login;
   //document.getElementById("btn-logout").onclick = logOut;
-
-/*Get NFTs Metadata*/
-
-const options = { address: "0xd...07", chain: "bsc" };
-const metaData = await Moralis.Web3API.token.getNFTMetadata(options);
