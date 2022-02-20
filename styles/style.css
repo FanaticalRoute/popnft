@@ -21,10 +21,6 @@ body {
   height: 100px;
   margin-top: 2em;
 }
-.logo img {
-  width: 100%;
-  height: 100%;
-}
 
 @-webkit-keyframes gradient {
   0% {
