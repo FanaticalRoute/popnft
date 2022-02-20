@@ -25,6 +25,14 @@ body {
     background: rgb(0, 0, 0);
 }
 
+.logo{
+    justify-content: center;
+    width: 10vh;
+    height: 5vh;
+    background-color: #002bff;
+    margin-top: 3em;
+}
+
 @keyframes gradient {
     0% {
         background-position: 0% 50%;
