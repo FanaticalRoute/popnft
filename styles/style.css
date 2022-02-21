@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 8em;
+  height: 20%;
   margin-top: 2em;
 }
 .logo img {
@@ -36,7 +36,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 7em;
+  height: 20%;
   font-family: mont;
   font-size: 5vh;
   text-align: center;
@@ -61,7 +61,7 @@ body {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 5em;
+  height: 15%;
   font-family: Mont;
   font-weight: 100;
   font-size: 3vh;
@@ -75,7 +75,7 @@ body {
   justify-content: center;
   margin-top: 3em;
   width: 100%;
-  height: 4em;
+  height: 20%;
 }
 .btn .walletconnect {
   width: 13em;
@@ -99,7 +99,7 @@ body {
   justify-content: center;
   margin-top: 2em;
   margin-bottom: 3em;
-  height: 3em;
+  height: 15%;
   width: 100%;
 }
 .socials .twitter {
