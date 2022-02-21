@@ -61,6 +61,8 @@ body {
   justify-content: center;
   width: 100%;
   height: 15%;
+}
+.subtitle h2 {
   font-family: Mont;
   font-weight: normal;
   font-size: 3vh;
@@ -82,7 +84,7 @@ body {
   border-radius: 50vh;
   font-family: Mont;
   font-size: 3vh;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
   background-color: red;
   background-image: linear-gradient(45deg, #FFA800, #FF6E4E);
