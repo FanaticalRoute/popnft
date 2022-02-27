@@ -12,8 +12,8 @@ export default function Home() {
                 <div className={css.mainContCenter}>
                     <div className={css.title}>
                         <h1>
-                            Take part to the 
-                            <span>NFT</span> 
+                            Take part to the
+                            <span> NFT </span>
                             world,
                             <br/>with a futuristic tool.
                         </h1>
