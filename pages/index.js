@@ -15,16 +15,20 @@ export default function Home() {
         if (!isAuthenticated) {
             authenticate()
         } else {
+            console.log(user);
             console.log("hello")
         }
     }
 
-    useEffect(async () => {
-        if (isInitialized) {
+    const initializeMoralis = async() => {
         const options = { chain: 'eth', address: `${user?.attributes?.accounts[0]}` };
         const polygonNFTs = await Moralis.Web3API.account.getNFTs(options);
         console.log(polygonNFTs)
+    }
 
+    useEffect(() => {
+        if (isInitialized) {
+            initializeMoralis();
         }
     }, [isInitialized])
     
