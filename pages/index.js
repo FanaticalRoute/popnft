@@ -15,7 +15,7 @@ export default function Home() {
         if (!isAuthenticated) {
             authenticate()
         } else {
-            console.log(user);
+            console.log(user.attributes.accounts[0])
             console.log("hello")
         }
     }
