@@ -1,0 +1,91 @@
+.headerLogo{
+    width: 100%;
+    position: relative;
+    height: 3rem;
+    max-width: 120px;
+}
+
+.headerSide{
+    grid-column: 1 / 2;
+}
+
+.flexDiv{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    padding: 2.5rem 3rem;
+    height: 100vh;
+}
+
+.centerCont{
+    grid-column: 3 / 9;
+    padding: 3px 35px;
+}
+
+.mainContSliderButton{
+    background: rgb(245, 245, 245);
+    border-radius: 2rem;
+    position: relative;
+}
+
+.mainContSliderButton button{
+    text-align: center;
+    padding: 12px;
+    font-size: 19px;
+    font-weight: 700;
+    width: 33.33%;
+    outline: none;
+    border: 0;
+    background: none;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.dragWidthSlide{
+    width: 33%;
+    height: 100%;
+    border-radius: 2rem;
+    background: rgb(226, 226, 226);
+    position: absolute;
+    top: 0;
+    transition: 0.15s;
+    left: 0;
+}
+
+.mainContTweets{
+    text-align: center;
+    padding-top: 50px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.headingTweetsTitle{
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+.yellowTitle{
+    color: rgb(255, 136, 0);
+}
+
+.mainTweets{
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    padding: 0 30px 0 42px;
+    overflow: auto;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainTweets div{
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+
+.contentScrollWrap{
+    position: relative;
+    height: 100%;
+}
