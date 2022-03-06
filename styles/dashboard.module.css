@@ -6,8 +6,6 @@
 }
 
 .headerSide{
-    position: sticky;
-    top: 0;
     width: 100%;
     padding: 40px 50px;
     z-index: 2;

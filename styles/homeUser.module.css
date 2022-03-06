@@ -30,7 +30,7 @@
 .mainContSliderButton button{
     text-align: center;
     padding: 12px;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 700;
     width: 33.33%;
     outline: none;
@@ -71,11 +71,6 @@
 }
 
 .mainTweets{
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    padding: 0 30px 0 42px;
-    overflow: auto;
     align-items: center;
     flex-direction: column;
 }
@@ -91,28 +86,42 @@
     height: 100%;
 }
 
+.sideWallet{
+    grid-column: 10 / 11;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.headerDeviceSmall{
+    display: none;
+    justify-content: space-between;
+    width: 80vw;
+    margin: auto;
+    padding: 30px 0 0;
+}
+
 @media only screen and (max-width: 825px) {
     .flexDiv {
-        display: flex;
+        display: inline-block;
+        width: 100%;
         padding: 0;
     }
     .centerCont{
-        position: absolute;
         padding: 0;
-        height: 100vh;
-        left:50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
         padding: 30px 0;
         width: 80vw;
+        margin: auto;
     }
 
-    .headerSide{
-        position: absolute;
-        left: 0;
-        height: 100vh;
-        top: 0;
-        width: 182px;
-        padding: 25px 37px;
+    .mainContSliderButton{
+        margin: 0;
+    }
+
+    .headerSide, .sideWallet{
+        display: none;
+    }
+
+    .headerDeviceSmall{
+        display: flex;
     }
 }

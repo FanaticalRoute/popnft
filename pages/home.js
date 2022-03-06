@@ -2,13 +2,20 @@ import {useState, useRef, useEffect} from 'react'
 import Image from 'next/image'
 import css from '../styles/homeUser.module.css'
 import {TwitterTweetEmbed} from 'react-twitter-embed';
-
+import Wallet from '../Components/Wallet'
 function Home() {
     const [selectedNav, setSelectedNav] = useState(0);
     const firstButtonSize = useRef();
 
     return (
     <div className={css.flexDiv}>
+        <div className={css.headerDeviceSmall}>
+            <div className={css.headerLogo}>
+                <Image src="/poNft wtext.png" objectFit='contain' layout='fill' alt="Popnft Logo"/>
+            </div>
+            <Wallet/>
+        </div>
+
         <div className={css.headerSide}>
             <div className={css.headerLogo}>
                 <Image src="/poNft wtext.png" objectFit='contain' layout='fill' alt="Popnft Logo"/>
@@ -24,7 +31,39 @@ function Home() {
             </div>
             <div className={css.mainContTweets}>
                 {/*0 == Tweets, 50 == Airdrops, 100 == Roadmaps*/}
-                {selectedNav == 0 &&
+                {selectedNav === 0 &&
+                    <div style={{height: '90%'}}>
+                        <h1 className={css.headingTweetsTitle}>Latest <span className={css.yellowTitle}>Tweets</span></h1>
+                        <div className={css.contentScrollWrap}>
+                            <div className={css.mainTweets}>
+                                {/*You can use array.map*/}
+                                <TwitterTweetEmbed tweetId={'1499844629956415490'}/>
+                                <TwitterTweetEmbed tweetId={'1499368382562451456'}/>
+                                <TwitterTweetEmbed tweetId={'1499844629956415490'}/>
+                                <TwitterTweetEmbed tweetId={'1499844629956415490'}/>
+                                <TwitterTweetEmbed tweetId={'1499844629956415490'}/>
+                            </div>
+                        </div>
+                        {/*put loading animation*/}
+                    </div>
+                }
+                {selectedNav === 50 &&
+                    <div style={{height: '90%'}}>
+                        <h1 className={css.headingTweetsTitle}>Latest <span className={css.yellowTitle}>Airdrops</span></h1>
+                        <div className={css.contentScrollWrap}>
+                            <div className={css.mainTweets}>
+                                {/*You can use array.map*/}
+                                <TwitterTweetEmbed tweetId={'1499844629956415490'}/>
+                                <TwitterTweetEmbed tweetId={'1499368382562451456'}/>
+                                <TwitterTweetEmbed tweetId={'1499844629956415490'}/>
+                                <TwitterTweetEmbed tweetId={'1499844629956415490'}/>
+                                <TwitterTweetEmbed tweetId={'1499844629956415490'}/>
+                            </div>
+                        </div>
+                        {/*put loading animation*/}
+                    </div>
+                }
+                {selectedNav === 100 &&
                     <div style={{height: '90%'}}>
                         <h1 className={css.headingTweetsTitle}>Latest <span className={css.yellowTitle}>Achievements</span></h1>
                         <div className={css.contentScrollWrap}>
@@ -41,6 +80,9 @@ function Home() {
                     </div>
                 }
             </div>
+        </div>
+        <div className={css.sideWallet}>
+            <Wallet/>
         </div>
     </div>
     )
