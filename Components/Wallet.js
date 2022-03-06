@@ -38,6 +38,7 @@ function Wallet({opt}) {
                     <h1>Wallet address</h1>
                     <p>bc1qxy2kgdygjrsqtzq2n0yrf2493p8515...</p>
                 </div>
+                <button className={css.buttonGradient}>Disconnect</button>
             </div>
         </div>
     )

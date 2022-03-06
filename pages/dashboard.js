@@ -18,7 +18,7 @@ function dashboard() {
                     //to add images outside file, https://nextjs.org/docs/basic-features/image-optimization#domains
                     Array.apply(null, { length: 5 }).map((e, i) => (
                         <div key={i}>
-                            <Link href='/'>
+                            <Link href='/home'>
                                 <div key={i} className={css.gridItem}>
                                     <div className={css.imageItem}>
                                         <Image src="/assetsPlaceholder.jpg" layout="fill" alt=""/>
@@ -34,7 +34,7 @@ function dashboard() {
                     //to add images outside file, https://nextjs.org/docs/basic-features/image-optimization#domains
                     Array.apply(null, { length: 5 }).map((e, i) => (
                         <div key={i}>
-                            <Link href='/'>
+                            <Link href='/home'>
                                 <div key={i} className={css.gridItem}>
                                     <div className={css.imageItem}>
                                         <Image src="/nftsamp.png" layout="fill" alt=""/>

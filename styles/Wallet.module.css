@@ -31,3 +31,14 @@
 .mainWalletCont{
     cursor: pointer;
 }
+
+.buttonGradient{
+    background: linear-gradient(96.33deg, #FFA800 4.42%, #FF6E4E 99.48%);
+    border: none;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 2rem;
+    margin: 0 25px;
+}

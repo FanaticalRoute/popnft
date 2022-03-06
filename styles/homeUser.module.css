@@ -25,12 +25,14 @@
     background: rgb(245, 245, 245);
     border-radius: 2rem;
     position: relative;
+    max-width: 610px;
+    margin: auto;
 }
 
 .mainContSliderButton button{
     text-align: center;
-    padding: 12px;
-    font-size: 16px;
+    padding: 13px;
+    font-size: 18px;
     font-weight: 700;
     width: 33.33%;
     outline: none;
