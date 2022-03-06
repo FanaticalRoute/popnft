@@ -62,6 +62,7 @@
 
 .headingTweetsTitle{
     font-size: 45px;
+    text-align: center;
     margin-bottom: 30px;
 }
 
@@ -88,4 +89,30 @@
 .contentScrollWrap{
     position: relative;
     height: 100%;
+}
+
+@media only screen and (max-width: 825px) {
+    .flexDiv {
+        display: flex;
+        padding: 0;
+    }
+    .centerCont{
+        position: absolute;
+        padding: 0;
+        height: 100vh;
+        left:50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding: 30px 0;
+        width: 80vw;
+    }
+
+    .headerSide{
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        top: 0;
+        width: 182px;
+        padding: 25px 37px;
+    }
 }

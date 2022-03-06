@@ -10,6 +10,7 @@
     top: 0;
     width: 100%;
     padding: 40px 50px;
+    z-index: 2;
 }
 
 
@@ -51,4 +52,32 @@
     border-radius: 25px;
     overflow: hidden;
     margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .gridGallery{
+        row-gap: 40px;
+        column-gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .gridGallery{
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+        column-gap: 40px;
+    }
+}
+
+@media only screen and (max-width: 525px) {
+    .gridGallery{
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 40px;
+        column-gap: 40px;
+    }
+    .headerSide{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 }
