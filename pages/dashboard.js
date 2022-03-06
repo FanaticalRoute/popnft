@@ -17,28 +17,32 @@ function dashboard() {
                     //you can put an array with titles, images and then map it. search array.map 
                     //to add images outside file, https://nextjs.org/docs/basic-features/image-optimization#domains
                     Array.apply(null, { length: 5 }).map((e, i) => (
-                        <Link href='/'>
-                            <div key={i} className={css.gridItem}>
-                                <div className={css.imageItem}>
-                                    <Image src="/assetsPlaceholder.jpg" layout="fill" alt=""/>
+                        <div key={i}>
+                            <Link href='/'>
+                                <div key={i} className={css.gridItem}>
+                                    <div className={css.imageItem}>
+                                        <Image src="/assetsPlaceholder.jpg" layout="fill" alt=""/>
+                                    </div>
+                                    <h2>Bored Ape YC</h2>
                                 </div>
-                                <h2>Bored Ape YC</h2>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     ))
                 }
                 {
                     //you can put an array with titles, images and then map it. search array.map 
                     //to add images outside file, https://nextjs.org/docs/basic-features/image-optimization#domains
                     Array.apply(null, { length: 5 }).map((e, i) => (
-                        <Link href='/'>
-                            <div key={i} className={css.gridItem}>
-                                <div className={css.imageItem}>
-                                    <Image src="/nftsamp.png" layout="fill" alt=""/>
+                        <div key={i}>
+                            <Link href='/'>
+                                <div key={i} className={css.gridItem}>
+                                    <div className={css.imageItem}>
+                                        <Image src="/nftsamp.png" layout="fill" alt=""/>
+                                    </div>
+                                    <h2>WonderPals</h2>
                                 </div>
-                                <h2>WonderPals</h2>
-                            </div>
-                        </Link>
+                            </Link>
+                        </div>
                     ))
                 }
             </div>
