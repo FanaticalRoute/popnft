@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import css from '../styles/dashboard.module.css'
 import Link from 'next/link';
+import Profile from "../Components/Profile";
+import Wallet from "../Components/Wallet";
 
 function dashboard() {
   return (
@@ -8,6 +10,9 @@ function dashboard() {
         <div className={css.headerSide}>
             <div className={css.headerLogo}>
                 <Image src="/poNft wtext.png" objectFit='contain' layout='fill' alt="Popnft Logo"/>
+            </div>
+            <div className={css.sideWallet}>
+                <Wallet/>
             </div>
         </div>
         <div className={css.centerCont}>

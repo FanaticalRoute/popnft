@@ -3,6 +3,8 @@ import Image from 'next/image'
 import css from '../styles/homeUser.module.css'
 import {TwitterTweetEmbed} from 'react-twitter-embed';
 import Wallet from '../Components/Wallet'
+import Profile from '../Components/Profile'
+
 function Home() {
     const [selectedNav, setSelectedNav] = useState(0);
     const firstButtonSize = useRef();
@@ -82,6 +84,7 @@ function Home() {
             </div>
         </div>
         <div className={css.sideWallet}>
+            <Profile/>
             <Wallet/>
         </div>
     </div>

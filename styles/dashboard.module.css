@@ -9,6 +9,8 @@
     width: 100%;
     padding: 40px 50px;
     z-index: 2;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -52,6 +54,15 @@
     margin-bottom: 20px;
 }
 
+.sideWallet{
+    grid-column: 9 / 11;
+    display: flex;
+    column-gap: 30px;
+    align-items: center;
+    height: fit-content;
+    justify-content: flex-end;
+}
+
 @media only screen and (max-width: 900px) {
     .gridGallery{
         row-gap: 40px;
@@ -72,10 +83,5 @@
         grid-template-columns: repeat(1, 1fr);
         row-gap: 40px;
         column-gap: 40px;
-    }
-    .headerSide{
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }

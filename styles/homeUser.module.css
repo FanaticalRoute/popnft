@@ -89,8 +89,11 @@
 }
 
 .sideWallet{
-    grid-column: 10 / 11;
+    grid-column: 9 / 11;
     display: flex;
+    column-gap: 30px;
+    align-items: center;
+    height: fit-content;
     justify-content: flex-end;
 }
 
