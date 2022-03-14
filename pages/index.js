@@ -24,17 +24,17 @@ export default function Home() {
             // router.push('/dashboard')
             router.push({
                 pathname: '/dashboard',
-                query: { name: 'Someone' }
+                // query: { name: 'Someone' }
             })
         }
     }
 
-    if(isAuthenticated) {
-        router.push({
-            pathname: '/dashboard',
-            query: { name: 'Someone' }
-        })
-    }
+    // if(isAuthenticated) {
+    //     router.push({
+    //         pathname: '/dashboard',
+    //         // query: { name: 'Someone' }
+    //     })
+    // }
 
     console.log(user?.attributes?.accounts[0])
     return (
