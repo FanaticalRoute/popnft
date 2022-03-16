@@ -1,10 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import css from "../styles/homeUser.module.css";
+import css from "../../styles/homeUser.module.css";
 import { TwitterTweetEmbed } from "react-twitter-embed";
-import Wallet from "../Components/Wallet";
-import Profile from "../Components/Profile";
+import Wallet from "../../Components/Wallet";
+import Profile from "../../Components/Profile";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
+import { useRouter } from 'next/router'
 
 function Home() {
   const [selectedNav, setSelectedNav] = useState(0);
@@ -14,9 +15,10 @@ function Home() {
 
   const { authenticate, isAuthenticated, user, Moralis, isInitialized } =
     useMoralis();
-
+    const router = useRouter()
+    const { pid } = router.query
   const Web3API = useMoralisWeb3Api();
-
+console.log(pid)
   useEffect(() => {
     if (isAuthenticated) {
         console.log("yo");
@@ -27,6 +29,11 @@ function Home() {
       console.log("no");
     }
   }, [isAuthenticated]);
+
+  useEffect(() => {
+    fetch(`/api/tweets/${pid}`)
+    .then((res) => console.log(res))
+  })
 
   return (
     <div className={css.flexDiv}>
