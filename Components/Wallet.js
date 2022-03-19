@@ -75,10 +75,6 @@ function Wallet(props) {
           <h1>Wallet address</h1>
           <p>{props.account}</p>
         </div>
-        <div className={css.textCont}>
-          <h1>Wallet address</h1>
-          <p>{props.account}</p>
-        </div>
         <button className={css.buttonGradient}>Disconnect</button>
       </div>
     </div>
