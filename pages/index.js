@@ -2,13 +2,17 @@ import Head from 'next/head'
 import Image from 'next/image'
 import css from '../styles/Home.module.css'
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MoralisProvider } from "react-moralis";
+import { useRouter } from 'next/router'
 
 
 export default function Home() {
 
+    const router = useRouter()
+
     const { authenticate, isAuthenticated, user, Moralis, isInitialized } = useMoralis();
+
     const Web3API = useMoralisWeb3Api()
 
     const authenticateUser = () => {
@@ -17,22 +21,20 @@ export default function Home() {
         } else {
             console.log(user.attributes.accounts[0])
             console.log("hello")
+            // router.push('/dashboard')
+            router.push({
+                pathname: '/dashboard',
+                // query: { name: 'Someone' }
+            })
         }
     }
 
-    const initializeMoralis = async() => {
-        const options = { chain: 'eth', address: `${user?.attributes?.accounts[0]}` };
-        const polygonNFTs = await Moralis.Web3API.account.getNFTs(options);
-        console.log(polygonNFTs)
-    }
-
-    useEffect(() => {
-        if (isInitialized) {
-            initializeMoralis();
-        }
-    }, [isInitialized])
-    
-    
+    // if(isAuthenticated) {
+    //     router.push({
+    //         pathname: '/dashboard',
+    //         // query: { name: 'Someone' }
+    //     })
+    // }
 
     console.log(user?.attributes?.accounts[0])
     return (
