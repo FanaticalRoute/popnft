@@ -44,6 +44,7 @@ console.log(pid)
             objectFit="contain"
             layout="fill"
             alt="Popnft Logo"
+            href="https://popnft.vercel.app/"
           />
         </div>
       </div>
