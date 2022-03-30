@@ -1,15 +1,18 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import css from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import css from '../styles/Home.module.css';
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { useEffect, useState } from 'react';
 import { MoralisProvider } from "react-moralis";
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import Connect from '../Components/Connect';
 
 
 export default function Home() {
 
     const router = useRouter()
+
+    const [showConnect, setIshowConnect] = useState(false)
 
     const { authenticate, isAuthenticated, user, Moralis, isInitialized } = useMoralis();
 
@@ -42,6 +45,13 @@ export default function Home() {
             <div className={css.logo}>
                 <Image layout='fill' src="/poNft wtext.png" objectFit='contain' alt="logo"/>
             </div>
+
+            <div style={{display: (showConnect)? "block": "none"}}>
+                <div>
+                    <Connect openMenu={openMenu}/>
+                </div>
+            </div>
+
             <div className={css.mainCont}>
                 <div className={css.mainContCenter}>
                     <div className={css.title}>
@@ -58,7 +68,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div className={css.btn}>
-                        <button className={css.walletconnect} type="button" id="btn-login" onClick={authenticateUser}>Connect Wallet</button>
+                        <button className={css.walletconnect} type="button" id="btn-login" onClick={(e)=>{}}>Connect Wallet</button>
                     </div>
                     <div className={css.socials}>
                         <a href="https://twitter.com/officialpopnft">
