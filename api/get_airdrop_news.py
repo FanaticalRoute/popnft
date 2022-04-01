@@ -61,8 +61,6 @@ class handler(BaseHTTPRequestHandler):
                         'title': i['title'],
                     }
                 )
-            # Convert the list of dicts into a JSON-encoded string
-            news_items = json.dumps(items)
         except KeyError:
             body = json.dumps(
                 {'message': f'RSS response returned in unexpected format: {rss_json}'}
@@ -71,4 +69,5 @@ class handler(BaseHTTPRequestHandler):
             return
 
         # Step 4: Construct the airdrop news response to send to the client
-        self._write_response(news_items, 200)
+        body = json.dumps({'message': items})
+        self._write_response(body, 200)
