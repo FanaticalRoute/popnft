@@ -12,7 +12,7 @@ class handler(BaseHTTPRequestHandler):
         self.airdrop_news_uri = 'https://blogs.airdropalert.com/feed/'
         self.send_header('Content-type', 'text/json')
 
-    def _write_response(self, body, status) -> None:
+    def _write_response(self, body: str, status: int) -> None:
         '''
         Set the response status and write the response body. This response will be returned to the client.
 
