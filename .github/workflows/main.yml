@@ -8,5 +8,6 @@ jobs:
       - run: sudo apt update --yes
       - run: sudo apt install --yes python3-pip
       - run: pip3 install --user black mypy
+      - run: python3 -m pip install types-requests
       - run: black --skip-string-normalization --check --diff --no-color api/
       - run: mypy --show-column-numbers --pretty --no-color-output api/
