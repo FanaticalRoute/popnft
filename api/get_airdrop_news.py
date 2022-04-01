@@ -50,19 +50,19 @@ class handler(BaseHTTPRequestHandler):
         rss_xml = xmltodict.parse(res.text)
         rss_json = json.loads(json.dumps(rss_xml))
         try:
-            items_dict = []
-            for item in rss_json['rss']['channel']['item']:
-                items_dict.append(
+            items = []
+            for i in rss_json['rss']['channel']['item']:
+                items.append(
                     {
-                        'category': item['category'],
-                        'description': item['description'],
-                        'link': item['link'],
-                        'publishDate': item['pubDate'],
-                        'title': item['title'],
+                        'category': i['category'],
+                        'description': i['description'],
+                        'link': i['link'],
+                        'publishDate': i['pubDate'],
+                        'title': i['title'],
                     }
                 )
             # Convert the list of dicts into a JSON-encoded string
-            news_items = json.dumps(items_dict)
+            news_items = json.dumps(items)
         except KeyError:
             body = json.dumps(
                 {'message': f'RSS response returned in unexpected format: {rss_json}'}
