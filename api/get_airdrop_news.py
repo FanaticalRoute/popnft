@@ -36,7 +36,7 @@ class handler(BaseHTTPRequestHandler):
         # Step 1: Fetch the airdrop news from the RSS feed
         res = requests.get(self.airdrop_news_uri)
 
-        # Step 2: Return error JSON if news could not be fetched
+        # Step 2: Validate the HTTP status
         if res.status_code != requests.codes.ok:
             body = json.dumps(
                 {
@@ -48,7 +48,7 @@ class handler(BaseHTTPRequestHandler):
 
         # Step 3: Parse the RSS feed XML response
         rss_xml = xmltodict.parse(res.text)
-        rss_json = json.loads(json.dumps(rss_xml, indent=2))
+        rss_json = json.loads(json.dumps(rss_xml))
         try:
             news_items = []
             for item in rss_json['rss']['channel']['item']:
