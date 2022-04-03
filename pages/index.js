@@ -65,18 +65,46 @@ export default function Home() {
                     <div className={css.btn}>
                         <button className={css.walletconnect} type="button" id="btn-login" onClick={() => setIsOpen(true)}>Connect Wallet</button>
 
-                        <Connect open={isOpen} onClose={() => setIsOpen(false)}>
+                        <Connect open={isOpen} onClose={() => setIsOpen(false)} className={css.connectCont}>
                             <div className={css.coinbaseCon}>
-                                <img src="../public/coinbase.png" alt="coinbase"/>
+                                <Image
+                                src="/coinbase.png"
+                                objectFit="contain"
+                                width={'100%'}
+                                height={'0%'}
+                                alt="coinbase wallet"
+                                />
+                                <p>Coinbase Wallet</p>
                             </div>
                             <div className={css.metamaskCon}>
-
+                                <Image
+                                src="/metamask.png"
+                                objectFit="contain"
+                                width={'100%'}
+                                height={'0%'}
+                                alt="metamask"
+                                />
+                                <p>Metamask</p>
                             </div>
                             <div className={css.binanceCon}>
-
+                                <Image
+                                src="/binance.png"
+                                objectFit="contain"
+                                width={'100%'}
+                                height={'0%'}
+                                alt="binance wallet"
+                                />
+                                <p>Binance Wallet</p>
                             </div>
                             <div className={css.walletCon}>
-
+                                <Image
+                                src="/walletconnect.png"
+                                objectFit="contain"
+                                width={'100%'}
+                                height={'0%'}
+                                alt="walletconnect"
+                                />
+                                <p>WalletConnect</p>  
                             </div>
                         </Connect>
 
