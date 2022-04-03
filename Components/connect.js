@@ -1,12 +1,15 @@
+import ReactDom from 'react-dom'
 import css from  '../styles/connect.module.css';
 
-function Connect({openMenu}){
-    return(
-     <div className={css.mainCont}>
-         <div className={`${openMenu ? css.openShowPopup : ""} ${css.popUpCont}`}>
-
-         </div>
-     </div>
+export default function Connect({ open, children, onClose }){
+    if (!open) return null
+    return ReactDom.createPortal(
+    <>
+        <div className={css.overlay} onClick={onClose}></div>
+        <div className={css.mainCont}>
+            {children}
+        </div>
+    </>,
+    document.getElementById('mainIndex')
     )
- }
- export default Connect
+}
