@@ -11,5 +11,5 @@ export default function Connect({ open, children, onClose }){
         </div>
     </>,
     document.getElementById('mainIndex')
-    )
+    ) 
 }
