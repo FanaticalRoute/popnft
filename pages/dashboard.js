@@ -97,12 +97,14 @@ function Dashboard(props) {
     <div>
       <div className={css.headerSide}>
         <div className={css.headerLogo}>
-          <Image
-            src="/poNft wtext.png"
-            objectFit="contain"
-            layout="fill"
-            alt="Popnft Logo"
-          />
+          <a href="https://popnft.vercel.app">
+            <Image
+              src="/poNft wtext.png"
+              objectFit="contain"
+              layout="fill"
+              alt="Popnft Logo"
+            />
+          </a>
         </div>
         <div className={css.sideWallet}>
           {present && <Wallet account={account} />}
