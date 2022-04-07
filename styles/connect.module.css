@@ -1,0 +1,49 @@
+.mainCont{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3);
+    padding: 5vh;
+    width: 75vh; 
+    height: 75vh;
+    border-radius: 5vh;
+    display: grid;
+    z-index: 1000;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 5vh;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.mainCont div{
+    background-color: #fff;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4vh;
+    display: grid;
+    grid-template-rows: 60% 30%;
+    gap: 2vh;
+    padding: 4vh 0 0 0;
+}
+
+.mainCont div p{
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.mainCont div img{
+    justify-self: center;
+    align-self: center;
+    width: 15vh;
+    height:15vh;
+}

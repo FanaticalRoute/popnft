@@ -10,6 +10,7 @@ function Dashboard(props) {
   const [account, setAccount] = useState("");
   const [present, setPresent] = useState(false);
   const [nftPresent, setNftPresent] = useState(false);
+  const [result, setResults] = useState("")
   const [nfts, setNfts] = useState([]);
 
   const { authenticate, isAuthenticated, user, Moralis, isInitialized } =
@@ -88,16 +89,22 @@ function Dashboard(props) {
     }
   }, [account]);
 
+  const goToValue= () => {
+
+  }
+
   return (
     <div>
       <div className={css.headerSide}>
         <div className={css.headerLogo}>
-          <Image
-            src="/poNft wtext.png"
-            objectFit="contain"
-            layout="fill"
-            alt="Popnft Logo"
-          />
+          <a href="https://popnft.vercel.app">
+            <Image
+              src="/poNft wtext.png"
+              objectFit="contain"
+              layout="fill"
+              alt="Popnft Logo"
+            />
+          </a>
         </div>
         <div className={css.sideWallet}>
           {present && <Wallet account={account} />}
@@ -116,6 +123,7 @@ function Dashboard(props) {
                 const metadata = JSON.parse(nft.metadata);
                 console.log(metadata);
                 let url = metadata.image;
+                
                 console.log(url);
 
                 const pos = url.indexOf("ipfs://");
@@ -124,7 +132,7 @@ function Dashboard(props) {
 
                 return (
                   <div key={i}>
-                    <Link href={{ pathname: "/home", query: {data: nft}}} passHref>
+                    <Link href={`/home/${metadata.name}`} passHref>
                       <div key={i} className={css.gridItem}>
                         <div className={css.imageItem}>
                           <Image
