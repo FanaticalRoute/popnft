@@ -45,7 +45,7 @@ export default function Home() {
 
     const metamask = async() => {
         if (!isAuthenticated) {
-            await authenticate();
+            await authenticate({provider: "metamask"});
             router.push({
                 pathname: '/dashboard',
                 // query: { name: 'Someone' }
