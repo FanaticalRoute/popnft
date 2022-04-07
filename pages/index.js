@@ -15,9 +15,14 @@ export default function Home() {
 
     const Web3API = useMoralisWeb3Api()
 
-    const authenticateUser = () => {
+    const authenticateUser = async() => {
         if (!isAuthenticated) {
-            authenticate()
+            await authenticate({provider: "walletconnect", mobileLinks: ["rainbow",
+            "metamask",
+            "argent",
+            "trust",
+            "imtoken",
+            "pillar"]})
         } else {
             console.log(user.attributes.accounts[0])
             console.log("hello")
@@ -29,6 +34,8 @@ export default function Home() {
         }
     }
 
+
+
     // if(isAuthenticated) {
     //     router.push({
     //         pathname: '/dashboard',
@@ -36,7 +43,7 @@ export default function Home() {
     //     })
     // }
 
-    console.log(user?.attributes?.accounts[0])
+    // console.log(user?.attributes?.accounts[0])
     return (
         <div style={{width: '100%', height: '100vh', display: 'flex', flexDirection: 'column'}}>
             <div className={css.logo}>
