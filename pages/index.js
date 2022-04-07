@@ -6,6 +6,12 @@ import { useEffect, useState } from 'react';
 import { MoralisProvider } from "react-moralis";
 import { useRouter } from 'next/router';
 import Connect from '../Components/Connect';
+import { BscConnector } from '@binance-chain/bsc-connector'
+import { WalletLinkConnector } from "@web3-react/walletlink-connector";
+
+const bsc = new BscConnector({
+    supportedChainIds: [56, 97] // later on 1 ethereum mainnet and 3 ethereum ropsten will be supported
+  })
 
 
 export default function Home() {
@@ -18,7 +24,7 @@ export default function Home() {
 
     const Web3API = useMoralisWeb3Api()
 
-    const authenticateUser = async() => {
+    const walletConnect = async() => {
         if (!isAuthenticated) {
             await authenticate({provider: "walletconnect", mobileLinks: ["rainbow",
             "metamask",
@@ -36,6 +42,48 @@ export default function Home() {
             })
         }
     }
+
+    const metamask = async() => {
+        if (!isAuthenticated) {
+            await authenticate();
+            router.push({
+                pathname: '/dashboard',
+                // query: { name: 'Someone' }
+            })
+        } else {
+            console.log(user.attributes.accounts[0])
+            console.log("hello")
+            // router.push('/dashboard')
+            router.push({
+                pathname: '/dashboard',
+                // query: { name: 'Someone' }
+            })
+        }
+    }
+
+    // const customConnector = async() => {
+    //     let x = await bsc.activate();
+    //     await bsc.getAccount();
+    //     return x;
+    // }
+
+
+
+    // const binance = async() => {
+    //     if (!isAuthenticated) {
+    //         await authenticate({connector: customConnector});
+    //     } else {
+    //         console.log(user.attributes.accounts[0])
+    //         console.log("hello")
+    //         // router.push('/dashboard')
+    //         router.push({
+    //             pathname: '/dashboard',
+    //             // query: { name: 'Someone' }
+    //         })
+    //     }
+    // }
+
+
 
 
 
@@ -90,6 +138,7 @@ export default function Home() {
                                 width={'100%'}
                                 height={'0%'}
                                 alt="metamask"
+                                onClick={metamask}
                                 />
                                 <p>Metamask</p>
                             </div>
@@ -100,6 +149,7 @@ export default function Home() {
                                 width={'100%'}
                                 height={'0%'}
                                 alt="binance wallet"
+                                // onClick = {binance}
                                 />
                                 <p>Binance Wallet</p>
                             </div>
@@ -110,6 +160,7 @@ export default function Home() {
                                 width={'100%'}
                                 height={'0%'}
                                 alt="walletconnect"
+                                onClick = {walletConnect}
                                 />
                                 <p>WalletConnect</p>  
                             </div>

@@ -9,7 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@binance-chain/bsc-connector": "^1.0.0",
     "@walletconnect/web3-provider": "^1.7.1",
+    "@web3-react/walletlink-connector": "^6.2.13",
     "@web3auth/web3auth": "^0.3.2",
     "fs": "^0.0.1-security",
     "magic-sdk": "^8.0.1",
