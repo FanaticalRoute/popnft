@@ -5,8 +5,12 @@ import css from "../styles/dashboard.module.css";
 import Link from "next/link";
 import Profile from "../Components/Profile";
 import Wallet from "../Components/Wallet";
+import { useRouter } from 'next/router';
+
 
 function Dashboard(props) {
+  const router = useRouter()
+
   const [account, setAccount] = useState("");
   const [present, setPresent] = useState(false);
   const [nftPresent, setNftPresent] = useState(false);
@@ -27,6 +31,9 @@ function Dashboard(props) {
       setPresent(false);
     } else {
       console.log("no");
+      router.push({
+        pathname: '/'
+    })
     }
   }, [isAuthenticated]);
 

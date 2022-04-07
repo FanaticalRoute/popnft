@@ -1,8 +1,11 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import css from "../styles/Wallet.module.css";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
+import { useRouter } from 'next/router';
 
 function Wallet(props) {
+  const router = useRouter()
+
   const [openMenu, setOpenMenu] = useState(false);
   const elementClickSafe = useRef();
   const clickAway = useCallback(
@@ -15,12 +18,22 @@ function Wallet(props) {
     [openMenu]
   );
 
+  const { authenticate, isAuthenticated, user, Moralis, isInitialized, logout } = useMoralis();
+
   useEffect(() => {
     window.addEventListener("click", clickAway);
     return () => {
       window.removeEventListener("click", clickAway);
     };
   }, [clickAway]);
+
+  const redirect = async() => {
+    logout();
+    router.push({
+      pathname: '/',
+      // query: { name: 'Someone' }
+  })
+  }
 
   console.log(props.account)
 
@@ -75,7 +88,7 @@ function Wallet(props) {
           <h1>Wallet address</h1>
           <p>{props.account}</p>
         </div>
-        <button className={css.buttonGradient}>Disconnect</button>
+        <button className={css.buttonGradient} onClick={redirect}>Disconnect</button>
       </div>
     </div>
   );
