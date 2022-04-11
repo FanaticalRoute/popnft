@@ -33,13 +33,13 @@ console.log(pid)
   useEffect(() => {
     fetch(`/api/tweets/${pid}`)
     .then((res) => console.log(res))
-    .then(setLoading(false))
+    .then(setisLoading(false))
   })
 
 
   //Loading animation
 
-  const [isLoading, setLoading] = useState(true)
+  const [isLoading, setisLoading] = useState(true)
 
   return (
     <div className={css.flexDiv}>
