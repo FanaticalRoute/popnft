@@ -34,11 +34,8 @@ export default function Home() {
             "pillar"]})
         } else {
             console.log(user.attributes.accounts[0])
-            console.log("hello")
-            // router.push('/dashboard')
             router.push({
                 pathname: '/dashboard',
-                // query: { name: 'Someone' }
             })
         }
     }
@@ -48,15 +45,11 @@ export default function Home() {
             await authenticate({provider: "metamask"});
             router.push({
                 pathname: '/dashboard',
-                // query: { name: 'Someone' }
             })
         } else {
             console.log(user.attributes.accounts[0])
-            console.log("hello")
-            // router.push('/dashboard')
             router.push({
                 pathname: '/dashboard',
-                // query: { name: 'Someone' }
             })
         }
     }
@@ -66,9 +59,6 @@ export default function Home() {
     //     await bsc.getAccount();
     //     return x;
     // }
-
-
-
     // const binance = async() => {
     //     if (!isAuthenticated) {
     //         await authenticate({connector: customConnector});
@@ -82,11 +72,6 @@ export default function Home() {
     //         })
     //     }
     // }
-
-
-
-
-
     // if(isAuthenticated) {
     //     router.push({
     //         pathname: '/dashboard',
