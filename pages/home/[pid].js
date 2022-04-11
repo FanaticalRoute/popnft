@@ -124,9 +124,9 @@ console.log(pid)
                   <TwitterTweetEmbed tweetId={"1499844629956415490"} />
                 </div>
               </div>
-              <Loading>
+              {isLoading && <Loading>
                 <div className={css.ripple}></div>
-              </Loading>
+              </Loading>}
             </div>
           )}
           {selectedNav === 50 && (
