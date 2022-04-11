@@ -4,7 +4,7 @@ import css from "../../styles/homeUser.module.css";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import Wallet from "../../Components/Wallet";
 import Profile from "../../Components/Profile";
-import Loading from "../../Components/Loading";
+import Loading from "../../Components/Load";
 import { useMoralis, useMoralisWeb3Api } from "react-moralis";
 import { useRouter } from 'next/router'
 
