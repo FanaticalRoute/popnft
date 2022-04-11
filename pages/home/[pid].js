@@ -33,7 +33,13 @@ console.log(pid)
   useEffect(() => {
     fetch(`/api/tweets/${pid}`)
     .then((res) => console.log(res))
+    .then(setLoading(false))
   })
+
+
+  //Loading animation
+
+  const [Loading, setLoading] = useState(true)
 
   return (
     <div className={css.flexDiv}>
@@ -106,6 +112,7 @@ console.log(pid)
               <h1 className={css.headingTweetsTitle}>
                 Latest <span className={css.yellowTitle}>Tweets</span>
               </h1>
+              <button>Test</button>
               <div className={css.contentScrollWrap}>
                 <div className={css.mainTweets}>
                   {/*You can use array.map*/}
@@ -116,7 +123,9 @@ console.log(pid)
                   <TwitterTweetEmbed tweetId={"1499844629956415490"} />
                 </div>
               </div>
-              {/*put loading animation*/}
+              <Loading>
+                <div className={css.ripple}></div>
+              </Loading>
             </div>
           )}
           {selectedNav === 50 && (

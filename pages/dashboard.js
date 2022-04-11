@@ -80,7 +80,6 @@ function Dashboard(props) {
     // setImageUrl(url);
 
     setNftPresent(true);
-    console.log("hey");
   };
 
   useEffect(() => {
@@ -129,7 +128,6 @@ function Dashboard(props) {
                 const pos = url.indexOf("ipfs://");
                 if(pos > -1)
                   url = "https://ipfs.io/ipfs" + url.slice(pos + 6);
-
                 return (
                   <div key={i}>
                     <Link href={`/home/${metadata.name}`} passHref>
