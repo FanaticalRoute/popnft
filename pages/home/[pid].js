@@ -39,7 +39,7 @@ console.log(pid)
 
   //Loading animation
 
-  const [Loading, setLoading] = useState(true)
+  const [isLoading, setLoading] = useState(true)
 
   return (
     <div className={css.flexDiv}>
